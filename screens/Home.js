@@ -1,15 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View,Pressable } from 'react-native';
 import {color} from '../utils/constants'
-import {useNavigation} from '@react-navigation/native'
+import Card from '../components/Card'
+import Recipients from '../components/Recipients'
+import Services from '../components/Services'
 
 export default function Home() {
-  const navigation=useNavigation()
+
   return (
     <View style={styles.container}>
-      <Pressable onPress={()=>navigation.openDrawer()} >
-      <Text style={styles.text} >AA</Text>
-      </Pressable>
+    <Card />
+    <Recipients />
+    <Services />
     </View>
   );
 }
@@ -19,7 +21,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor:color.lightgreen,
     alignItems: 'center',
-    justifyContent: 'center',
   },
   text:{
     backgroundColor:'red'
